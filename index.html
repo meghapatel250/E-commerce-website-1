@@ -1,0 +1,623 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Homepage</title>
+     <!--font awesome-->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+     integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+     crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <style>
+        /* header */
+        
+        @import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@1,400&display=swap');
+        header .input-group .form-control{
+            border: 1px solid black;
+        }
+
+        .top-header .list-items{
+            align-items: end;
+            display: flex;
+        }
+
+        .top-header .list-items .list-item{
+            margin: 15px 20px;
+            list-style-type: none;
+        }
+        
+        .top-header .list-items .list-item-link{
+            cursor: pointer;
+            color: rgb(54, 54, 54);
+            text-decoration: none;
+        }
+
+        .top-header .list-items .list-item-link .fa-user:hover{
+          color: blue;
+        }
+        .top-header .list-items .list-item-link .fa-heart:hover{
+          color: red;
+        }
+    /* */
+
+        /* navbar */
+        nav .navbar-nav .nav-item {
+            margin: 5px 30px;
+            cursor: pointer;
+        }
+
+        nav .navbar-nav .nav-item .dropdown-menu {
+            margin: 10px 0;
+            border-radius: 2px;
+            border: none;
+        }
+
+        nav .navbar-nav .nav-item .dropdown-menu .dropdown-item:hover {
+            background-color: #818a91;
+            color: black;
+        }
+
+
+        nav .navbar-nav .nav-item .nav-list {
+            text-decoration: none;
+            color: black;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        /* end of nav */
+        /* banner*/
+        .banner-div {
+            text-align: center;
+            background-color: rgb(247, 247, 230);
+        }
+
+        .banner-div .image {
+            height: 500px;
+            width: 100%;
+            object-fit: cover;
+        }
+        .banner-div .image{
+            position: relative;
+        }
+
+        .banner-text p{
+            font-family: 'Fira Sans Condensed', sans-serif;
+            margin: 0 20px;
+            font-size: 25px;
+        }
+
+        .banner-text h2{
+            font-size: 40px;
+             font-weight: 600;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+
+        .banner-text{
+            position: absolute;
+            color: white;
+            top: 25%;
+            left: 20%;
+        }
+
+        .banner-div img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        /* section-01*/
+        .section-01 {
+            margin: 0;
+            background-color: #818a91;
+        }
+
+        ::selection {
+            background: #FF676D;
+            color: #fff;
+        }
+
+        .container {
+            max-width: 1080px;
+            width: 100%;
+            overflow: hidden;
+            padding: 70px 0;
+        }
+
+        .container .main-card {
+            display: flex;
+            justify-content: space-evenly;
+            width: 200%;
+            transition: 1s;
+        }
+
+        #two:checked~.main-card {
+            margin-left: -100%;
+        }
+
+        .container .main-card .cards {
+            width: calc(100% / 2 - 10px);
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 20px;
+            justify-content: space-between;
+        }
+
+        .main-card .cards .card {
+            width: calc(100% / 3 - 10px);
+            background: #fff;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+            transition: all 0.4s ease;
+        }
+
+        .main-card .cards .card:hover {
+            transform: translateY(-15px);
+        }
+
+        .cards .card .content {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .cards .card .content .img {
+            /* height: 200px; */
+            /* width: 200px; */
+            height: 300px;
+            width: 300px;
+            border-radius: 50%;
+            padding: 1px;
+            background: #FF676D;
+        }
+
+        .card .content .img img {
+            height: 100%;
+            width: 100%;
+            border: 2px solid #ffff;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .card .content .name a {
+            text-decoration: none;
+            color: black;
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        .container .button {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin: 20px;
+        }
+
+        .button label {
+            height: 15px;
+            width: 15px;
+            border-radius: 20px;
+            background: #fff;
+            margin: 0 4px;
+            cursor: pointer;
+            transition: all 0.5s ease;
+        }
+
+        .button label.active {
+            width: 35px;
+        }
+
+        #one:checked~.button .one {
+            width: 35px;
+        }
+
+        #one:checked~.button .two {
+            width: 15px;
+        }
+
+        #two:checked~.button .one {
+            width: 15px;
+        }
+
+        #two:checked~.button .two {
+            width: 35px;
+        }
+
+        input[type="radio"] {
+            display: none;
+        }
+
+        @media (min-width: 605px) and (max-width: 675px) {
+            .main-card .cards .card .img {
+                width: 190px;
+                height: 190px;
+            }
+
+            .main-card .cards .card {
+                padding: 25px;
+            }
+
+        }
+
+        @media (min-width: 765px) and (max-width: 860px) {
+            .main-card .cards .card .img {
+                width: 200px;
+                height: 200px;
+            }
+        }
+
+        @media (min-width: 850px) and (max-width: 1010px) {
+            .main-card .cards .card .img {
+                width: 250px;
+                height: 250px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .main-card .cards .card {
+                margin: 20px 0 10px 0;
+                width: calc(100% / 2 - 10px);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .main-card .cards .card {
+                /* margin: 20px 0 10px 0; */
+                margin: 20px 50px;
+                padding: 30px;
+                width: 100%;
+            }
+
+            .main-card .cards .card .img {
+                width: 300px;
+                height: 300px;
+            }
+        }
+        @media (max-width: 425px) {
+            .main-card .cards .card .img {
+                width: 200px;
+                height: 200px;
+            }
+
+            .section-01 {
+            background-color: #818a91;
+            }
+
+        }
+
+        /* footer */
+        .footer {
+            background: #000;
+            font-family: 'Play', sans-serif;
+            padding: 20px 40px 15px;
+            font-size: 15px;
+            line-height: 24px;
+            color: #737373;
+        }
+        .footer h6{
+            color: #fff;
+            font-size: 16px;
+            text-transform: uppercase;
+            margin-top: 5px;
+            letter-spacing: 2px;
+        }
+        
+
+        .footer .row {
+            width: 100%;
+            margin: 1% 0%;
+            padding: 0.6% 0%;
+            color: gray;
+            font-size: 13px;
+        }
+
+        .footer .row a {
+            text-decoration: none;
+            color: #737373;
+            transition: 0.5s;
+        }
+
+        .footer .row a:hover {
+            color: #fff;
+        }
+
+        .footer .line{
+            border: 1px dotted gray;
+        }
+
+        .footer .copyright-text{
+            margin: 10px 0 0;
+        }
+
+        .footer-links {
+            padding-left: 0;
+            list-style: none
+        }
+
+
+        @media (max-width:720px) {
+            .footer {
+                text-align: left;
+                padding: 5%;
+            }
+
+            .footer .row ul li {
+                display: block;
+                margin: 10px 0px;
+                text-align: left;
+            }
+
+            .footer .row a i {
+                margin: 0% 3%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- header -->
+    <div class="top-header">
+        <header class="container-fluid">
+            <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
+                <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
+                    <a href="" class="nav-link main-logo-link">
+                        <h2 class="logo-font text-black my-0"><strong>Ecommerce</strong>Website</h2>
+                    </a>
+                </div>
+                <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+                    <form method="GET" action="/products/">
+                        <div class="input-group w-100">
+                            <input class="form-control rounded-1" type="text" name="q" placeholder="Search our site"
+                                fdprocessedid="q0ikw">
+                            <div class="input-group-append">
+                                <button class="form-control btn btn-black rounded-1" type="submit"
+                                fdprocessedid="etpsn6">
+                                <span class="icon">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </span>
+                            </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">  
+                    <ul class="list-items">
+                        <!-- <li class="list-item"><a class="list-item-link"><i class="fa-solid fa-house"></i></a></li> -->
+                        <li class="list-item"><a class="list-item-link" href="user.html" title="Login"><i class="fa-solid fa-user"></i></a></li>
+                        <li class="list-item"><a class="list-item-link" href="wishlist.html"><i class="fa-solid fa-heart"></i></a></li>
+                        <li class="list-item"><a class="list-item-link" href="cart-page.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row bg-white">
+                <!--navbar-->
+                <nav class="navbar navbar-expand-lg">
+                    <div class="container-fluid">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse justify-content-center" id="navbarNavDarkDropdown">
+                            <ul class="navbar-nav">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-list dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                        All Products
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="sort-price.html">By Price</a></li>
+                                        <li><a class="dropdown-item" href="sort-ratings.html">By Rating</a></li>
+                                        <li><a class="dropdown-item" href="sort-category.html">By Category</a></li>
+                                        <li><a class="dropdown-item" href="all-products.sort.html">All Products</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-list dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Clothing
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="clothing.activewear.html">Active wear & Essentials</a></li>
+                                        <li><a class="dropdown-item" href="clothing.jeans.html">Jeans</a></li>
+                                        <li><a class="dropdown-item" href="clothing.shirt.html">Shirts</a></li>
+                                        <li><a class="dropdown-item" href="#">All Clothing</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-list dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Homeware
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="bed-n-bath.html">Bed & Bath</a></li>
+                                        <li><a class="dropdown-item" href="kitchen.html">Kitchen & Dining</a></li>
+                                        <li><a class="dropdown-item" href="homeware.html">All Homeware</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-list dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Special Offers
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="special_offers.html">New Arrivals</a></li>
+                                        <li><a class="dropdown-item" href="special_offers.html">Deals</a></li>
+                                        <li><a class="dropdown-item" href="special_offers.html">Clearance</a></li>
+                                        <li><a class="dropdown-item" href="special_offers.html">All Special Products</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <!-- nav end -->
+            </div>
+            <div id="delivery-banner" class="row text-center">
+                <div class="col bg-black text-white">
+                    <!-- <h4 class="logo-font my-1">Free delivery on orders over $50!</h4>-->
+                </div>
+            </div>
+        </header>
+    </div>
+    <!-- end of header -->
+    <!-- banner -->
+    <div class="banner-div">
+        <div class="image">
+            <img src="https://t4.ftcdn.net/jpg/03/64/16/11/240_F_364161100_kyFpptUbO5sVtDfEBhBCsAMKOV9x2MRc.jpg"
+                alt="">
+            <div class="banner-text">
+                <h2>Shopping Website</h2>
+                <p>Fashion & Clothing is the one makes you look awesome and unique from others!</p>
+            </div>
+        </div>
+    </div>
+    <!--section-01-->
+    <div class="section-01">
+        <div class="container">
+            <input type="radio" name="dot" id="one">
+            <input type="radio" name="dot" id="two">
+            <div class="main-card">
+                <div class="cards">
+                    <div class="card">
+                        <div class="content">
+                            <div class="img">
+                                <img alt="" border="0" height="130" width="130"
+                                    src="https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGNsb3RoZXMlMjBzaG9wcGluZ3xlbnwwfDB8MHx8&auto=format&fit=crop&w=500&q=60" />
+                            </div>
+                            <div class="details">
+                                <div class="name"><a href="clothing.shirt.html">Clothing</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="content">
+                            <div class="img">
+                                <img alt="" border="0" height="130" width="130"
+                                    src="https://media.istockphoto.com/id/1251694108/photo/scandinavian-concept-of-living-room-interior-with-design-sofa-coffee-table-plant-in-pot.jpg?s=612x612&w=0&k=20&c=ITXyoZJVlM4NlRynI5Vip1_ddWGIRPy1TyJhFbxL6Hk=" />
+                            </div>
+                            <div class="details">
+                                <div class="name"><a href="homeware.html">Homeware</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="content">
+                            <div class="img">
+                                <img alt="" border="0" height="130" width="130"
+                                    src="https://media.istockphoto.com/id/1162761217/photo/modern-japanese-home-kitchen-with-prepared-lunch-on-counter.jpg?s=612x612&w=0&k=20&c=fknc_qE3qUb_l9pE4MnLVNjFKfK81DwfEGxmnj05xII=" />
+                            </div>
+                            <div class="details">
+                                <div class="name"><a href="kitchen.html">Kitchen Essentials</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cards">
+                    <div class="card">
+                        <div class="content">
+                            <div class="img">
+                                <img alt="" border="0" height="130" width="130"
+                                    src="https://media.istockphoto.com/id/1209677281/photo/price-tag-cutting-sale.jpg?s=612x612&w=0&k=20&c=Jdn_IQJRD6HTDlnMzTSaEDUtH3N9CfjqiefvhOPfu-I=" />
+                            </div>
+                            <div class="details">
+                                <div class="name"><a href="sort-price.html">By Price</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="content">
+                            <div class="img">
+                                <img alt="" border="0" height="130" width="130"
+                                    src="https://images.unsplash.com/photo-1479064555552-3ef4979f8908?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8Y2xvdGhlcyUyMGNhdGVnb3JpZXN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" />
+                            </div>
+                            <div class="details">
+                                <div class="name"><a href="sort-category.html">By Categories</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="content">
+                            <div class="img">
+                                <img alt="" border="0" height="130" width="130"
+                                    src="https://media.istockphoto.com/id/1334288822/photo/close-up-of-woman-customer-giving-a-five-star-rating-on-smartphone-review-service-rating.jpg?b=1&s=170667a&w=0&k=20&c=8vce0TsRQvyi0b1qv48vKmjOtak9YjDgDgzZxRY10W0=" />
+                            </div>
+                            <div class="details">
+                                <div class="name"><a href="sort-ratings.html">By Ratings</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="button">
+                <label for="one" class=" active one"></label>
+                <label for="two" class="two"></label>
+            </div>
+        </div>
+    </div>
+    <!--end of section-01-->
+    <!-- js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+        integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
+        crossorigin="anonymous"></script>
+</body>
+<!-- footer -->
+<footer>
+    <div class="footer">
+        <div class="row">
+            <div class="col-sm-12 col-md-6">
+                <h6>About</h6>
+                <p class="text-justify">Scanfcode.com <i>CODE WANTS TO BE SIMPLE </i> is an initiative to help the
+                    upcoming programmers with the code. Scanfcode focuses on providing the most efficient code or
+                    snippets as the code wants to be simple. We will help programmers build up concepts in different
+                    programming languages that include C, C++, Java, HTML, CSS, Bootstrap, JavaScript, PHP, Android, SQL
+                    and Algorithm.</p>
+            </div>
+
+            <div class="col-xs-6 col-md-3">
+                <h6>Categories</h6>
+                <ul class="footer-links">
+                    <li><a href="bed-n-bath.html">Bed & Bath</a></li>
+                    <li><a href="kitchen.html">Kitchen & Dining</a></li>
+                    <li><a href="clothing.activewear.html">Activewear & Essentials</a></li>
+                    <li><a href="clothing.jeans.html">Jeans</a></li>
+                    <li><a href="clothing.shirt.html">Shirts</a></li>
+                </ul>
+            </div>
+
+            <div class="col-xs-6 col-md-3">
+                <h6>Quick Links</h6>
+                <ul class="footer-links">
+                    <li><a href="http://scanfcode.com/about/">Login</a></li>
+                    <li><a href="http://scanfcode.com/contact/">View Cart</a></li>
+                    <li><a href="http://scanfcode.com/contribute-at-scanfcode/">Wishlist</a></li>
+                    <li><a href="http://scanfcode.com/privacy-policy/">Offers</a></li>
+                    <li><a href="http://scanfcode.com/privacy-policy/">New Arrivals</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="site-footer">
+            <div class="row">
+                <div class="line"></div>
+                <div class="col-md-8 col-sm-6 col-xs-12">
+                    <p class="copyright-text">Copyright &copy; 2017 All Rights Reserved by
+                        <a href="#">Scanfcode</a>.
+                    </p>
+                </div>
+
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <!-- social-icons -->
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</html>

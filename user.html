@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login</title>
+     <!--font awesome-->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+     integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+     crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <style>
+        /*Start Global Style*/
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background:#e9ebee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+    font-family: sans-serif;
+}
+.container{
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    height:100%
+}
+
+.login ,.register{width: 50%}
+
+/*Start Login Style*/
+.login{
+    float:left;
+    background-color: #fafafa;
+    height: 100%;
+    border-radius: 10px 0 0 10px;
+    text-align: center;
+    padding-top: 80px;
+}
+.login h1{
+    margin-bottom: 40px;
+    font-size: 2.5em;
+}
+
+input[type="email"] , input[type="password"]{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 30px;
+    border: none;
+    background-color: #eeeeef;
+}
+input[type="checkbox"]{
+    float: left;
+    margin-right: 5px;
+}
+.login span{
+    float: left
+}
+.login a{
+    float: right;
+    text-decoration: none;
+    color: #000;
+    transition: 0.3s all ease-in-out;
+}
+.login a:hover{color: #9526a9;font-weight: bold}
+.login button{
+    width: 100%;
+    margin: 30px 0;
+    padding: 10px;
+    border: none;
+    background-color: #a58ca7;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.3s all ease-in-out;
+}
+.login button:hover{
+    width:97%;
+    font-size: 22px;
+    border-radius: 5px;
+    
+}
+.login hr{
+    width: 30%;
+    display: inline-block
+}
+
+.login p{
+    display: inline-block;
+    margin: 0px 10px 30px;
+}
+.login ul{
+    list-style: none;
+    margin-bottom:40px;  
+}
+.login ul li{
+    display: inline-block;
+    margin-right: 30px;
+    cursor: pointer;
+}
+.login ul li:hover{opacity: 0.6}
+.login ul li:last-child{margin-right: 0}
+.login .copyright{
+    display: inline-block;
+    float: none;
+}
+/*Start Register Style*/
+.register{
+    float: right;
+    /* background-image: linear-gradient(135deg, #23212f 5%, #9526a9 95%); */
+    background-image: url("https://media.istockphoto.com/id/1364911468/photo/simple-two-white-paper-bags-on-floor-3d-render-illustration.jpg?b=1&s=170667a&w=0&k=20&c=X5Kte1squi4Zaa8_lS2BuwsiFEq2hybRZ5LNDV6rhnc=");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    color:#fff;
+    border-radius:  0 10px 10px  0;
+    text-align: center;
+    padding: 50px 0;
+}
+
+.register button{
+    background-color: transparent;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 10px 10px;
+    color: black;
+    font-size: 20px;
+    text-transform: uppercase;
+    transition:0.2s all  ease-in-out;
+}
+.register button:hover{
+    color: #9526a9;
+    background-color: #fff;
+    cursor: pointer;
+    border: transparent;
+}
+/* responsive */
+@media screen and (max-width:450px){
+    body{
+        background:#e9ebee;
+    display: block;
+
+    font-family: sans-serif;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="login">
+           <div class="container">
+                <h1>Log in</h1>
+                <input type="email" placeholder="Email">
+                <input type="password" placeholder="Password"><br>
+                <input type="checkbox"><span>Remember me</span>
+                <a href="#">Forgot password?</a>
+                <button>log in</button>
+                <div class="clearfix"></div>
+           </div>
+        </div>
+        <div class="register">
+            <div class="container">
+                <button>Register <i class="fas fa-arrow-circle-right"></i></button>
+            </div>
+        </div>  
+      </div>
+      <!-- <div class="homepage">
+        <button>Go to <i class="fas fa-arrow-circle-right"></i></button>
+      </div> -->
+</body>
+</html>

@@ -1,0 +1,529 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>cart Page</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+     <!--font awesome-->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+     integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+     crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'>
+
+    <style>
+        /* header */
+         /* header */
+        
+         @import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@1,400&display=swap');
+        header .input-group .form-control{
+            border: 1px solid black;
+        }
+
+        header .list-items{
+            align-items: end;
+            display: flex;
+        }
+
+        header .list-items .list-item{
+            margin: 15px 20px;
+            list-style-type: none;
+        }
+        
+        header .list-items .list-item-link{
+            cursor: pointer;
+            color: rgb(54, 54, 54);
+            text-decoration: none;
+        }
+        header .list-items .list-item-link:hover{
+            color: rgb(153, 150, 150);
+        }
+        header .list-items .list-item-link .fa-heart:hover{
+            color: red;
+        }
+        header .list-items .list-item-link .fa-user:hover{
+            color: blue;
+        }
+        /* header end */
+        #cart {
+            max-width: 1440px;
+            margin:  0 auto;
+        }
+
+        .form div {
+            margin-bottom: 0.4em;
+        }
+
+        .cartItem {
+            --bs-gutter-x: 1.5rem;
+        }
+
+        .cartItemQuantity,
+        .proceed {
+            background: #f4f4f4;
+        }
+
+        .cartItemQuantity input {
+            max-width: 50px;
+            background: #f4f4f4;
+            border: none;
+        }
+
+        .items {
+            padding-right: 30px;
+        }
+
+        #btn-checkout {
+            min-width: 100%;
+        }
+
+        /* stasysiia.com */
+        @import url("https://fonts.googleapis.com/css2?family=Exo&display=swap");
+
+        body {
+            background-color: #fff;
+            font-family: "Exo", sans-serif;
+            font-size: 22px;
+            margin: 0;
+            padding: 0;
+            color: #111111;
+            justify-content: center;
+            align-items: center;
+        }
+
+        main a {
+            color: #0e1111;
+            text-decoration: none;
+        }
+
+        main .btn-check:focus+.btn-primary,
+        main .btn-primary:focus {
+            color: #fff;
+            background-color: #111;
+            border-color: transparent;
+            box-shadow: 0 0 0 0.25rem rgb(49 132 253 / 50%);
+        }
+
+        main button:hover,
+        main .btn:hover {
+            box-shadow: 5px 5px 7px #c8c8c8, -5px -5px 7px white;
+        }
+
+        main button:active {
+            box-shadow: 2px 2px 2px #c8c8c8, -2px -2px 2px white;
+        }
+
+        /* sticky-header */
+
+        /*PREVENT BROWSER SELECTION*/
+        main a:focus,
+        main button:focus,
+        main input:focus,
+        main textarea:focus {
+            outline: none;
+        }
+
+        /*main*/
+        main:before {
+            content: "";
+            display: block;
+            height: 88px;
+        }
+
+        main h1 {
+            font-size: 2.4em;
+            font-weight: 600;
+            letter-spacing: 0.15rem;
+            text-align: center;
+            margin: 30px 6px;
+        }
+
+        main h2 {
+            color: rgb(37, 44, 54);
+            font-weight: 700;
+            font-size: 2.5em;
+        }
+
+         main h3 {
+            border-bottom: solid 2px #000;
+        }
+
+        main h5 {
+            padding: 0;
+            font-weight: bold;
+            color: #92afcc;
+        }
+
+        main p {
+            color: #333;
+            font-family: "Roboto", sans-serif;
+            margin: 0.6em 0;
+        }
+
+        main h1,
+        main h2,
+        main h4 {
+            text-align: center;
+            padding-top: 16px;
+        }
+
+        /* yukito bloody */
+        main .cartItem img {
+            width: 100px;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        main .back {
+            position: relative;
+            top: -30px;
+            font-size: 16px;
+            margin: 10px 10px 3px 15px;
+        }
+
+        main .inline {
+            display: inline-block;
+        }
+
+        main .shopnow,
+        main .contact {
+            background-color: #000;
+            padding: 2px 20px;
+            font-size: 22px;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.5s;
+            cursor: pointer;
+        }
+
+        main .shopnow:hover {
+            border-color: rgb(219, 186, 204);
+            color: white;
+            background: rgb(82, 80, 80);
+        }
+
+        /* for button animation*/
+        main .shopnow span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: all 0.5s;
+        }
+
+        main .shopnow span:after {
+            content: url("https://badux.co/smc/codepen/caticon.png");
+            position: absolute;
+            font-size: 22px;
+            opacity: 0;
+            top: 2px;
+            right: -6px;
+            transition: all 0.5s;
+        }
+
+        main .shopnow:hover span {
+            padding-right: 25px;
+        }
+
+        main .shopnow:hover span:after {
+            opacity: 1;
+            top: 2px;
+            right: -6px;
+        }
+
+        main .ma {
+            margin: auto;
+        }
+
+        main .price {
+            color: rgb(32, 29, 30);
+            font-size: 2em;
+        }
+
+        main .last-price span {
+            color: #f64749;
+            text-decoration: line-through;
+        }
+
+        #mycart {
+            min-width: 90px;
+        }
+
+        #cartItems {
+            font-size: 17px;
+        }
+
+        #product .container .row .pr4 {
+            padding-right: 15px;
+        }
+
+        #product .container .row .pl4 {
+            padding-left: 15px;
+        }
+
+        main .btn>.fa {
+            font-size: 22px;
+        }
+        /* footer */
+        /* footer */
+        .footer {
+            background: #0a0a0a;
+            font-family: 'Play', sans-serif;
+            padding: 20px 40px 15px;
+            font-size: 15px;
+            line-height: 24px;
+            color: #737373;
+        }
+
+        .footer h6 {
+            color: #fff;
+            font-size: 16px;
+            text-transform: uppercase;
+            margin-top: 5px;
+            letter-spacing: 2px;
+        }
+
+
+        .footer .row {
+            width: 100%;
+            margin: 1% 0%;
+            padding: 0.6% 0%;
+            color: gray;
+            font-size: 13px;
+        }
+
+        .footer .row a {
+            text-decoration: none;
+            color: #737373;
+            transition: 0.5s;
+        }
+
+        .footer .row a:hover {
+            color: #fff;
+        }
+
+        .footer-links {
+            padding-left: 0;
+            list-style: none
+        }
+
+        @media (max-width:720px) {
+            .footer {
+                text-align: left;
+                padding: 5%;
+            }
+
+            .footer .row ul li {
+                display: block;
+                margin: 10px 0px;
+                text-align: left;
+            }
+
+            .footer .row a i {
+                margin: 0% 3%;
+            }
+        }
+    /* footer */
+
+    </style>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <!-- sticky-header -->
+    <header>
+        <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
+            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-center">
+                <a href="/" class="nav-link main-logo-link">
+                    <h2 class="logo-font text-dark my-0"><strong>Ecommerce</strong>Website</h2>
+                </a>
+            </div>
+            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+                <form method="GET" action="/products/">
+                    <div class="input-group w-100">
+                        <input class="form-control rounded-1" type="text" name="q" placeholder="Search our site"
+                            fdprocessedid="q0ikw">
+                        <div class="input-group-append">
+                            <button class="form-control btn btn-black rounded-1" type="submit"
+                            fdprocessedid="etpsn6">
+                            <span class="icon">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </span>
+                        </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+                <ul class="list-items">
+                    <li class="list-item"><a class="list-item-link" href="newhomepage.html"><i class="fa-solid fa-house"></i></a></li>
+                    <li class="list-item"><a class="list-item-link" href="user.html" title="Login"><i class="fa-solid fa-user"></i></a></li>
+                    <li class="list-item"><a class="list-item-link" href="#"><i class="fa-solid fa-heart"></i></a></li>
+                    <li class="list-item"><a class="list-item-link" href="#"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <!-- main content -->
+    <main id="cart" style="max-width:960px" style="background-color: #737373;">
+        <!-- <div class="back"><a href="#">&#11178; shop</a></div> -->
+        <div class="text-center"><a href="#" class="text-dark active text-dark"><strong>Cart</strong></a><b>></b><a href="#" class="text-dark">
+               <strong>Information</strong></a><b>></b><a href="#" class="text-dark"><strong>Payment</strong></a></div>
+        <h4 class="mb-5">Your Cart</h4>
+        <div class="container-fluid">
+            <div class="row align-items-start">
+                <div class="col-12 col-sm-8 items">
+                    <!--1-->
+                    <div class="cartItem row align-items-start">
+                        <div class="col-3 mb-2 text-center">
+                            <img class="w-150"
+                                src="https://cdn.shopify.com/s/files/1/0605/7875/8907/products/ADT0244_dc62b8da-5b85-4556-b455-7050be40e794_720x.jpg?v=1644497410"
+                                alt="art image">
+                        </div>
+                        <div class="col-3 mb-2">
+                            <h6 class="">Dark Art 1</h6>
+                            <p class="pl-1 mb-0">20 x 24</p>
+                            <p class="pl-1 mb-0">Matte Print</p>
+                        </div>
+                        <div class="col-3">
+                            <p class="cartItemQuantity p-1 text-center"><input type="number" min="0" value="1"></p>
+                        </div>
+                        <div class="col-3">
+                            <p id="cartItem1Price"><span>&#8377;</span>2000.00</p>
+                            <p id="cartItem1Price"><strike><span>&#8377;</span>3000.00</strike></p>
+                            <button class="btn"><i class="fa fa-trash"></i></button>
+                        </div>
+                        <div class="col-12">
+                            <input type="checkbox" id="giftwrap" name="giftwrap" value="Gift">
+                            <label for="giftwrap">Add a gift wrap & a message with this item +Rs 50</label>
+                        </div>
+                    </div>
+                    <hr>
+                    <!--2-->
+                    <div class="cartItem row align-items-start">
+                        <div class="col-3 mb-2 text-center">
+                            <img src="https://cdn.shopify.com/s/files/1/0605/7875/8907/products/ADT0244_dc62b8da-5b85-4556-b455-7050be40e794_720x.jpg?v=1644497410"
+                                alt="art image">
+                        </div>
+                        <div class="col-3 mb-2">
+                            <h6 class="">Dark Art 2</h6>
+                            <p class="pl-1 mb-0">20 x 24</p>
+                            <p class="pl-1 mb-0">Matte Print</p>
+                        </div>
+                        <div class="col-3">
+                            <p class="cartItemQuantity p-1 text-center"><input type="number" min="0" value="1"></p>
+                        </div>
+                        <div class="col-3">
+                            <p id="cartItem1Price"><span>&#8377;</span>1500.00</p>
+                            <p id="cartItem1Price"><strike><span>&#8377;</span>2999.00</strike></p>
+                            <button class="btn"><i class="fa fa-trash"></i></button>
+                        </div>
+                        <div class="col-12">
+                            <input type="checkbox" id="giftwrap" name="giftwrap" value="Gift">
+                            <label for="giftwrap">Add a gift wrap & a message with this item +Rs 50</label>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+                <div class="col-12 col-sm-4 p-3 proceed form">
+                    <div class="row m-0">
+                        <div class="col-sm-8 p-0">
+                            <h6>Subtotal</h6>
+                        </div>
+                        <div class="col-sm-4 p-0">
+                            <p id="subtotal"><span>&#8377;</span>4000.00</p>
+                        </div>
+                    </div>
+                    <div class="row m-0">
+                        <div class="col-sm-8 p-0 ">
+                            <h6>Tax</h6>
+                        </div>
+                        <div class="col-sm-4 p-0">
+                            <p id="tax"><span>&#8377;</span>6.40</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row mx-0 mb-2">
+                        <div class="col-sm-8 p-0 d-inline">
+                            <h5>Total</h5>
+                        </div>
+                        <div class="col-sm-4 p-0">
+                            <p id="total"><span>&#8377;</span>138.40</p>
+                        </div>
+                    </div>
+                    <P>P.S:Use Coupon code on Checkout Page</P>
+                    <a href="#"><button id="btn-checkout" class="shopnow"><span>Checkout</span></button></a>
+                </div>
+            </div>
+        </div>
+        </div>
+    </main>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+<!-- footer -->
+<footer>
+    <div class="footer">
+        <div class="row">
+            <div class="col-sm-12 col-md-6">
+                <h6>About</h6>
+                <p class="text-justify">Scanfcode.com <i>CODE WANTS TO BE SIMPLE </i> is an initiative to help the
+                    upcoming programmers with the code. Scanfcode focuses on providing the most efficient code or
+                    snippets as the code wants to be simple. We will help programmers build up concepts in different
+                    programming languages that include C, C++, Java, HTML, CSS, Bootstrap, JavaScript, PHP, Android, SQL
+                    and Algorithm.</p>
+            </div>
+
+            <div class="col-xs-6 col-md-3">
+                <h6>Categories</h6>
+                <ul class="footer-links">
+                    <li><a href="bed-n-bath.html">Bed & Bath</a></li>
+                    <li><a href="kitchen.html">Kitchen & Dining</a></li>
+                    <li><a href="clothing.activewear.html">Activewear & Essentials</a></li>
+                    <li><a href="clothing.jeans.html">Jeans</a></li>
+                    <li><a href="clothing.shirt.html">Shirts</a></li>
+                </ul>
+            </div>
+
+            <div class="col-xs-6 col-md-3">
+                <h6>Quick Links</h6>
+                <ul class="footer-links">
+                    <li><a href="http://scanfcode.com/about/">Login</a></li>
+                    <li><a href="http://scanfcode.com/contact/">View Cart</a></li>
+                    <li><a href="http://scanfcode.com/contribute-at-scanfcode/">Wishlist</a></li>
+                    <li><a href="http://scanfcode.com/privacy-policy/">Offers</a></li>
+                    <li><a href="http://scanfcode.com/privacy-policy/">New Arrivals</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="site-footer">
+            <!-- <div class="row">
+                <div class="line"></div>
+                <div class="col-md-8 col-sm-6 col-xs-12">
+                    <p class="copyright-text">Copyright &copy; 2017 All Rights Reserved by
+                        <a href="#">Scanfcode</a>.
+                    </p>
+                </div>
+
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <!-- social-icons
+                </div>
+            </div> -->
+        </div>
+    </div>
+</footer>
+</html>

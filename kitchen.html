@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kitchen</title>
+    <!--font awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <style>
+        /* @import url('https://fonts.googleapis.com/css?family=Inconsolata'); */
+
+        /* @font-face {
+            font-family: "Inconsolata";
+            src: url('../fonts/inconsolata.ttf');
+        }
+
+        @font-face {
+            font-family: "Poppins";
+            src: url(../fonts/Poppins-Bold.ttf);
+        } */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            /* font-family: "Inconsolata"; */
+        }
+
+        img {
+            display: block;
+            width: 100%;
+        }
+
+        /* header */
+        header .input-group .form-control{
+            border: 1px solid black;
+        }
+
+        .top-header .list-items{
+            align-items: end;
+            display: flex;
+        }
+
+        .top-header .list-items .list-item{
+            margin: 15px 20px;
+            list-style-type: none;
+        }
+        
+        .top-header .list-items .list-item-link{
+            cursor: pointer;
+            color: rgb(54, 54, 54);
+            text-decoration: none;
+        }
+
+        .top-header .list-items .list-item-link:hover{
+            color: rgb(153, 150, 150);
+        }
+        .top-header .list-items .list-item-link .fa-heart:hover{
+            color: red;
+        }
+        .top-header .list-items .list-item-link .fa-user:hover{
+            color: blue;
+        }
+        /* header end */
+        /* navbar */
+        nav .navbar-nav .nav-item {
+            margin: 5px 30px;
+            cursor: pointer;
+        }
+
+        nav .navbar-nav .nav-item .dropdown-menu {
+            margin: 10px 0;
+            border-radius: 2px;
+            border: none;
+        }
+
+        nav .navbar-nav .nav-item .dropdown-menu .dropdown-item:hover {
+            background-color: #818a91;
+            color: black;
+        }
+
+        nav .navbar-nav .nav-item .nav-list {
+            text-decoration: none;
+            color: black;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        /* end of nav */
+
+        /* banner-image */
+
+        .carousel-div{
+            margin: 10px 0;
+            height: 390px;
+            width: 100%;
+        }
+
+        .carousel-div img{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        
+        /* FEATURED PRODUCTOS */
+
+        .feature-products {
+            /* background-color:#F3F3F3; */
+            font-family: Roboto;
+            position: relative;
+
+        }
+
+        .product-content .title {
+            margin-top: 20px;
+            text-align: center;
+            font-family: Roboto;
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+
+
+        .feature-title {
+            font-weight: 600;
+            color: #000;
+        }
+
+        .feature-title h2 {
+            margin-top: 30px;
+            margin-bottom: 50px;
+            color: #000;
+            font-family: Roboto;
+            font-size: 35px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .feature-title a {
+            text-decoration: none;
+            padding: 0 20px;
+            font-size: 16px;
+            color: #8b8888;
+        }
+
+        .feature-active {
+            color: #000 !important;
+            font-weight: 700;
+        }
+
+        .price,
+        .rating {
+            display: inline-block;
+            margin: 0 auto;
+            width: 100%;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+
+        .product-grid {
+            border: 1px solid transparent;
+            font-family: 'Roboto', sans-serif;
+            padding: 10px 10px;
+            transition: all 0.5s;
+            margin-bottom: 30px;
+            margin-top: 20px;
+        }
+
+        .product-grid .product-image {
+            height: 300px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-grid .product-image a.image {
+            display: block;
+        }
+
+        .product-grid .product-image img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
+            transition: all .5s ease 0s;
+        }
+
+        .product-grid:hover .product-image img {
+            transform: scale(1.1);
+        }
+
+        .product-grid .add-to-cart {
+            color: #fff;
+            background: #222;
+            font-size: 34px;
+            font-weight: 500;
+            text-align: center;
+            padding: 0 5px;
+            display: block;
+            position: absolute;
+            bottom: -50px;
+            right: 0;
+            transition: all ease-in-out 0.35s;
+            width: 20%;
+            opacity: 0;
+        }
+
+        .product-grid:hover .add-to-cart {
+            opacity: 1;
+        }
+
+        .product-grid .add-to-cart:after {
+            content: "\f101";
+            color: #fff;
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            display: inline-block;
+            opacity: 0;
+            transition: all 0.5s;
+
+        }
+
+        .product-grid .add-to-cart:hover:after {
+            padding-left: 10px;
+            opacity: 1;
+        }
+
+        .product-grid .product-content {
+            position: relative;
+        }
+
+        .product-grid .product-stock {
+            color: #999;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 35px;
+            border-bottom: 1px solid #c1c1c1;
+            display: block;
+            margin: 0 0 15px;
+        }
+
+        .product-grid .icon {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            opacity: 0;
+            position: absolute;
+            top: -15px;
+            right: 0;
+            transition: all ease-in-out 0.35s;
+        }
+
+        .product-grid:hover .icon {
+            opacity: 1;
+            top: 8px;
+        }
+
+        .product-grid .icon li {
+            display: inline-block;
+        }
+
+        .product-grid .icon li a {
+            color: #222;
+            font-size: 16px;
+            margin: 0 4px;
+        }
+
+        .product-grid .icon li a:hover {
+            color: var(--main-color);
+        }
+
+        .product-grid .title {
+            font-family: Roboto;
+            font-size: 15px;
+            text-transform: uppercase;
+            font-weight: 700;
+            line-height: 2px;
+        }
+
+        .product-grid .title a {
+            text-decoration: none;
+            color: #222;
+        }
+
+        .product-grid .title a:hover {
+            color: var(--main-color);
+            transform: scale(.4s);
+            transition: all .5s ease 0s;
+        }
+
+        .product-grid .category {
+            font-size: 18px;
+            margin: 0 0 3px;
+            display: block;
+        }
+
+        .product-grid .category a {
+            color: #222;
+            transition: all 0.3s ease 0s;
+        }
+
+        .product-grid .category a:hover {
+            color: var(--main-color);
+        }
+
+        .product-grid .price {
+            font-family: Roboto;
+            font-size: 16px;
+            text-transform: uppercase;
+            font-weight: 700;
+            display: inline-block;
+            color: #000;
+        }
+
+        .product-grid .rating {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            float: right;
+        }
+
+        .product-grid .rating li {
+            color: #FFB14B;
+            font-size: 13px;
+            display: inline-block;
+        }
+
+
+        .action-buttons {
+            display: inline-block;
+            margin-top: 50px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .action-buttons .btn-outline {
+            padding: 6px 20px;
+            border-radius: 5px;
+            border: 2px solid #ccc;
+            margin: 0 4px;
+        }
+
+
+        .action-buttons .btn-outline-icon {
+            padding: 6px 10px;
+            border-radius: 5px;
+            border: 2px solid #ccc;
+            margin: 0 4px;
+        }
+
+        .action-buttons a {
+            color: #000;
+            border: none;
+            font-family: Roboto;
+            font-size: 12px;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: .4s;
+            text-decoration: none;
+        }
+
+        .action-buttons a:hover {
+            color: #fff !important;
+            background: #000;
+        }
+        .action-buttons a:hover .fa-heart{
+            color: red !important;
+        }
+
+        .product-grid .rating li.disable {
+            color: #c1c1c1;
+        }
+
+        @media only screen and (max-width:990px) {
+            .product-grid {
+                margin-bottom: 30px;
+            }
+        }
+
+        /*********************  featured product end **********************/
+        /* footer */
+        .footer {
+            background: #000;
+            font-family: 'Play', sans-serif;
+            padding: 20px 40px 15px;
+            font-size: 15px;
+            line-height: 24px;
+            color: #737373;
+        }
+
+        .footer h6 {
+            color: #fff;
+            font-size: 16px;
+            text-transform: uppercase;
+            margin-top: 5px;
+            letter-spacing: 2px;
+        }
+
+
+        .footer .row {
+            width: 100%;
+            margin: 1% 0%;
+            padding: 0.6% 0%;
+            color: gray;
+            font-size: 13px;
+        }
+
+        .footer .row a {
+            text-decoration: none;
+            color: #737373;
+            transition: 0.5s;
+        }
+
+        .footer .row a:hover {
+            color: #fff;
+        }
+
+        .footer .line {
+            border: 1px dotted gray;
+        }
+
+        .footer .copyright-text {
+            margin: 10px 0 0;
+        }
+
+        .footer-links {
+            padding-left: 0;
+            list-style: none
+        }
+
+        @media (max-width:720px) {
+            .footer {
+                text-align: left;
+                padding: 5%;
+            }
+
+            .footer .row ul li {
+                display: block;
+                margin: 10px 0px;
+                text-align: left;
+            }
+
+            .footer .row a i {
+                margin: 0% 3%;
+            }
+        }
+    /* footer */
+
+        /* tablet*/
+        @media screen and (min-width:768px) {
+            .slider {
+                height: 400px;
+            }
+
+            .container-tips {
+                margin: 50px 0;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /*Estilos para web*/
+
+        @media screen and (min-width:1024px) {
+            .container {
+                width: 1000px;
+                margin: auto;
+            }
+
+            .icon-menu {
+                display: none;
+            }
+
+            .main-nav {
+                visibility: visible;
+                opacity: 1;
+                width: 100%;
+                margin-top: 20px;
+            }
+
+            .menu {
+                position: static;
+                width: 100%;
+                display: flex;
+                background: none;
+            }
+
+            .menu__link {
+                color: #333;
+            }
+
+            .menu__link:hover {
+                background: #333;
+                color: white;
+            }
+
+            .main-footer {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                grid-gap: 20px;
+            }
+
+            .copy {
+                grid-column-start: span 4;
+                text-align: center;
+            }
+        }
+
+        @media screen and (min-width:1280px) {
+            .container {
+                width: 1200px;
+            }
+
+            .slider {
+                height: 500px;
+                font-size: 1.5em;
+            }
+        }
+
+        @media screen and (min-width:1600px) {
+            .container {
+                width: 1500px;
+            }
+
+            .slider {
+                height: 600px;
+            }
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- header -->
+    <div class="top-header">
+        <header class="container-fluid">
+            <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
+                <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
+                    <a href="/" class="nav-link main-logo-link">
+                        <h2 class="logo-font text-black my-0"><strong>Ecommerce</strong>Website</h2>
+                    </a>
+                </div>
+                <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+                    <form method="GET" action="/products/">
+                        <div class="input-group w-100">
+                            <input class="form-control rounded-1" type="text" name="q" placeholder="Search our site"
+                                fdprocessedid="q0ikw">
+                            <div class="input-group-append">
+                                <button class="form-control btn btn-black rounded-1" type="submit"
+                                fdprocessedid="etpsn6">
+                                <span class="icon">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </span>
+                            </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+                    <ul class="list-items">
+                        <li class="list-item"><a class="list-item-link" href="newhomepage.html"><i class="fa-solid fa-house"></i></a></li>
+                        <li class="list-item"><a class="list-item-link" href="user.html" title="Login"><i class="fa-solid fa-user"></i></a></li>
+                        <li class="list-item"><a class="list-item-link" href="#"><i class="fa-solid fa-heart"></i></a></li>
+                        <li class="list-item"><a class="list-item-link" href="#"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row bg-white">
+                <!--navbar-->
+                <nav class="navbar navbar-expand-lg">
+                    <div class="container-fluid">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse justify-content-center" id="navbarNavDarkDropdown">
+                            <ul class="navbar-nav">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-list dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                        All Products
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="sort-price.html">By Price</a></li>
+                                        <li><a class="dropdown-item" href="sort-ratings.html">By Rating</a></li>
+                                        <li><a class="dropdown-item" href="sort-category.html">By Category</a></li>
+                                        <li><a class="dropdown-item" href="all-products.sort.html">All Products</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-list dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Clothing
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="clothing.activewear.html">Active wear & Essentials</a></li>
+                                        <li><a class="dropdown-item" href="clothing.jeans.html">Jeans</a></li>
+                                        <li><a class="dropdown-item" href="clothing.shirt.html">Shirts</a></li>
+                                        <li><a class="dropdown-item" href="#">All Clothing</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-list dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Homeware
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="bed-n-bath.html">Bed & Bath</a></li>
+                                        <li><a class="dropdown-item" href="kitchen.html">Kitchen & Dining</a></li>
+                                        <li><a class="dropdown-item" href="homeware.html">All Homeware</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-list dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Special Offers
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="special_offers.html">New Arrivals</a></li>
+                                        <li><a class="dropdown-item" href="special_offers.html">Deals</a></li>
+                                        <li><a class="dropdown-item" href="special_offers.html">Clearance</a></li>
+                                        <li><a class="dropdown-item" href="special_offers.html">All Special Products</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <!-- nav end -->
+            </div>
+            <div id="delivery-banner" class="row text-center">
+                <div class="col bg-black text-white">
+                    <!-- <h4 class="logo-font my-1">Free delivery on orders over $50!</h4>-->
+                </div>
+            </div>
+        </header>
+    </div>
+    <!-- carousel -->
+
+    <!-- cend -->
+    <main class="main">
+        <div class="container">
+            <!-- featured products-->
+            <section class="feature-products">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 text-center feature-title">
+                            <h2>FEATURED PRODUCTS</h2>
+                            <a href="homeware.html">ALL HOMEWARE</a> | <a class="feature-active" href="kitchen.html">KITCHEN & DINING</a> | 
+                            <a href="bed-n-bath.html">BED & BATH</a>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="product-grid">
+                                <div class="product-image">
+                                    <a href="#" class="image" style="background-color:#F3F3F3;">
+                                        <img class="pic-1"
+                                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTny2WHnZA_LNkKFz9WjA8rEiHwARzGFvPw3PV3jxHfQ&usqp=CAU&ec=48600112">
+                                    </a>
+                                    <a class="add-to-cart" href=""> + </a>
+                                </div>
+                                <div class="product-content">
+                                    <h3 class="title"><a href="#">Product Name</a></h3>
+                                    <div class="price">$21.60</div>
+                                    <ul class="rating">
+                                        <li class="fas fa-star"></li>
+                                        <li class="fas fa-star"></li>
+                                        <li class="fas fa-star"></li>
+                                        <li class="fas fa-star"></li>
+                                        <li class="fas fa-star disable"></li>
+                                    </ul>
+                                </div>
+
+                                <div class="action-buttons">
+                                    <a class="btn-outline">ADD TO CART</a>
+                                    <a class="btn-outline-icon"><i class="fa fa-heart"></i></a>
+                                    <a class="btn-outline-icon"><i class="fa-solid fa-cart-shopping"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="product-grid">
+                                <div class="product-image">
+                                    <a href="#" class="image">
+                                        <img class="pic-1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTny2WHnZA_LNkKFz9WjA8rEiHwARzGFvPw3PV3jxHfQ&usqp=CAU&ec=48600112">
+                                    </a>
+                                    <a class="add-to-cart" href=""> + </a>
+                                </div>
+                                <div class="product-content">
+
+                                    <h3 class="title"><a href="#">Product Name</a></h3>
+
+                                    <div class="price">$21.60</div>
+                                    <ul class="rating">
+                                        <li class="fas fa-star"></li>
+                                        <li class="fas fa-star"></li>
+                                        <li class="fas fa-star"></li>
+                                        <li class="fas fa-star"></li>
+                                        <li class="fas fa-star"></li>
+                                    </ul>
+                                </div>
+                                <div class="action-buttons">
+                                    <a class="btn-outline">ADD TO CART</a>
+                                    <a class="btn-outline-icon"><i class="fa fa-heart"></i></a>
+                                    <a class="btn-outline-icon"><i class="fa-solid fa-cart-shopping"></i></a>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="product-grid">
+                                <div class="product-image">
+                                    <a href="#" class="image">
+                                        <img class="pic-1"
+                                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTny2WHnZA_LNkKFz9WjA8rEiHwARzGFvPw3PV3jxHfQ&usqp=CAU&ec=48600112">
+                                    </a>
+                                    <a class="add-to-cart" href=""> + </a>
+                                </div>
+                                <div class="product-content">
+                                    <h3 class="title"><a href="#">Product Name</a></h3>
+
+                                    <div class="price">$21.60</div>
+                                    <ul class="rating">
+                                        <li class="fas fa-star"></li>
+                                        <li class="fas fa-star"></li>
+                                        <li class="fas fa-star"></li>
+                                        <li class="fas fa-star"></li>
+                                        <li class="fas fa-star"></li>
+                                    </ul>
+                                </div>
+                                <div class="action-buttons">
+                                    <a class="btn-outline">ADD TO CART</a>
+                                    <a class="btn-outline-icon"><i class="fa fa-heart"></i></a>
+                                    <a class="btn-outline-icon"><i class="fa-solid fa-cart-shopping"></i></a>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="product-grid">
+                                <div class="product-image">
+                                    <a href="#" class="image">
+                                        <img class="pic-1"
+                                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTny2WHnZA_LNkKFz9WjA8rEiHwARzGFvPw3PV3jxHfQ&usqp=CAU&ec=48600112">
+                                    </a>
+                                    <a class="add-to-cart" href=""> + </a>
+                                </div>
+                                <div class="product-content">
+
+                                    <h3 class="title"><a href="#">Product Name</a></h3>
+
+                                    <div class="price">$21.60</div>
+                                    <ul class="rating">
+                                        <li class="fas fa-star"></li>
+                                        <li class="fas fa-star"></li>
+                                        <li class="fas fa-star"></li>
+                                        <li class="fas fa-star"></li>
+                                        <li class="fas fa-star"></li>
+                                    </ul>
+                                </div>
+
+                                <div class="action-buttons">
+                                    <a class="btn-outline">ADD TO CART</a>
+                                    <a class="btn-outline-icon"><i class="fa fa-heart"></i></a>
+                                    <a class="btn-outline-icon"><i class="fa-solid fa-cart-shopping"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 col-sm-6">
+                            <div class="product-grid">
+                                <div class="product-image">
+                                    <a href="#" class="image">
+                                        <img class="pic-1"
+                                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTny2WHnZA_LNkKFz9WjA8rEiHwARzGFvPw3PV3jxHfQ&usqp=CAU&ec=48600112">
+                                    </a>
+                                    <a class="add-to-cart" href=""> + </a>
+                                </div>
+                                <div class="product-content">
+
+                                    <h3 class="title"><a href="#">Product Name</a></h3>
+
+                                    <div class="price">$21.60</div>
+                                    <ul class="rating">
+                                        <li class="fas fa-star"></li>
+                                        <li class="fas fa-star"></li>
+                                        <li class="fas fa-star"></li>
+                                        <li class="fas fa-star"></li>
+                                        <li class="fas fa-star"></li>
+                                    </ul>
+                                </div>
+
+                                <div class="action-buttons">
+                                    <a class="btn-outline">ADD TO CART</a>
+                                    <a class="btn-outline-icon"><i class="fa fa-heart"></i></a>
+                                    <a class="btn-outline-icon"><i class="fa-solid fa-cart-shopping"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="product-grid">
+                                <div class="product-image">
+                                    <a href="#" class="image">
+                                        <img class="pic-1"
+                                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTny2WHnZA_LNkKFz9WjA8rEiHwARzGFvPw3PV3jxHfQ&usqp=CAU&ec=48600112">
+                                    </a>
+                                    <a class="add-to-cart" href=""> + </a>
+                                </div>
+                                <div class="product-content">
+
+                                    <h3 class="title"><a href="#">Product Name</a></h3>
+
+                                    <div class="price">$21.60</div>
+                                    <ul class="rating">
+                                        <li class="fas fa-star"></li>
+                                        <li class="fas fa-star"></li>
+                                        <li class="fas fa-star"></li>
+                                        <li class="fas fa-star"></li>
+                                        <li class="fas fa-star"></li>
+                                    </ul>
+                                </div>
+
+                                <div class="action-buttons">
+                                    <a class="btn-outline">ADD TO CART</a>
+                                    <a class="btn-outline-icon"><i class="fa fa-heart"></i></a>
+                                    <a class="btn-outline-icon"><i class="fa-solid fa-cart-shopping"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="product-grid">
+                                <div class="product-image">
+                                    <a href="#" class="image">
+                                        <img class="pic-1"
+                                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTny2WHnZA_LNkKFz9WjA8rEiHwARzGFvPw3PV3jxHfQ&usqp=CAU&ec=48600112">
+                                    </a>
+                                    <a class="add-to-cart" href=""> + </a>
+                                </div>
+                                <div class="product-content">
+
+                                    <h3 class="title"><a href="#">Product Name</a></h3>
+
+                                    <div class="price">$21.60</div>
+                                    <ul class="rating">
+                                        <li class="fas fa-star"></li>
+                                        <li class="fas fa-star"></li>
+                                        <li class="fas fa-star"></li>
+                                        <li class="fas fa-star"></li>
+                                        <li class="fas fa-star"></li>
+                                    </ul>
+                                </div>
+
+                                <div class="action-buttons">
+                                    <a class="btn-outline">ADD TO CART</a>
+                                    <a class="btn-outline-icon"><i class="fa fa-heart"></i></a>
+                                    <a class="btn-outline-icon"><i class="fa-solid fa-cart-shopping"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="product-grid">
+                                <div class="product-image">
+                                    <a href="#" class="image">
+                                        <img class="pic-1"
+                                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTny2WHnZA_LNkKFz9WjA8rEiHwARzGFvPw3PV3jxHfQ&usqp=CAU&ec=48600112">
+                                    </a>
+                                    <a class="add-to-cart" href=""> + </a>
+                                </div>
+                                <div class="product-content">
+
+                                    <h3 class="title"><a href="#">Product Name</a></h3>
+
+                                    <div class="price">$21.60</div>
+                                    <ul class="rating">
+                                        <li class="fas fa-star"></li>
+                                        <li class="fas fa-star"></li>
+                                        <li class="fas fa-star"></li>
+                                        <li class="fas fa-star"></li>
+                                        <li class="fas fa-star"></li>
+                                    </ul>
+                                </div>
+
+                                <div class="action-buttons">
+                                    <a class="btn-outline">ADD TO CART</a>
+                                    <a class="btn-outline-icon"><i class="fa fa-heart"></i></a>
+                                    <a class="btn-outline-icon"><i class="fa-solid fa-cart-shopping"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </section>
+            <!-- featured end -->
+        </div>
+    </main>
+
+    <!-- js -->
+    <!--bootstrap js  -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+        integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
+        crossorigin="anonymous"></script>
+   <script></script>
+</body>
+<footer>
+    <div class="footer">
+        <div class="row">
+            <div class="col-sm-12 col-md-6">
+                <h6>About</h6>
+                <p class="text-justify">Scanfcode.com <i>CODE WANTS TO BE SIMPLE </i> is an initiative to help the
+                    upcoming programmers with the code. Scanfcode focuses on providing the most efficient code or
+                    snippets as the code wants to be simple. We will help programmers build up concepts in different
+                    programming languages that include C, C++, Java, HTML, CSS, Bootstrap, JavaScript, PHP, Android, SQL
+                    and Algorithm.</p>
+            </div>
+
+            <div class="col-xs-6 col-md-3">
+                <h6>Categories</h6>
+                <ul class="footer-links">
+                    <li><a href="bed-n-bath.html">Bed & Bath</a></li>
+                    <li><a href="kitchen.html">Kitchen & Dining</a></li>
+                    <li><a href="clothing.activewear.html">Activewear & Essentials</a></li>
+                    <li><a href="clothing.jeans.html">Jeans</a></li>
+                    <li><a href="clothing.shirt.html">Shirts</a></li>
+                </ul>
+            </div>
+
+            <div class="col-xs-6 col-md-3">
+                <h6>Quick Links</h6>
+                <ul class="footer-links">
+                    <li><a href="http://scanfcode.com/about/">Login</a></li>
+                    <li><a href="http://scanfcode.com/contact/">View Cart</a></li>
+                    <li><a href="http://scanfcode.com/contribute-at-scanfcode/">Wishlist</a></li>
+                    <li><a href="http://scanfcode.com/privacy-policy/">Offers</a></li>
+                    <li><a href="http://scanfcode.com/privacy-policy/">New Arrivals</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="site-footer">
+            <div class="row">
+                <div class="line"></div>
+                <div class="col-md-8 col-sm-6 col-xs-12">
+                    <p class="copyright-text">Copyright &copy; 2017 All Rights Reserved by
+                        <a href="#">Scanfcode</a>.
+                    </p>
+                </div>
+
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <!-- social-icons -->
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</html>
